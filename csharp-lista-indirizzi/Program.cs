@@ -43,13 +43,13 @@ while (!file.EndOfStream)
             catch (ArgumentException ex)
             {
                 Console.WriteLine(ex.Message);
-                Console.WriteLine($"Errore alla riga : {contatore}");
+                Console.WriteLine($"Errore nell'elemento N° : {contatore} \n");
                 
             }
         }
         else
         {
-            Console.WriteLine($"Il numero di elementi nell'indirizzo N° {contatore} non è idoneo");
+            Console.WriteLine($"Il numero di elementi nell'indirizzo N° {contatore} non è idoneo \n");
         }
 
     }

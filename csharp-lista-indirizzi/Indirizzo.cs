@@ -17,6 +17,7 @@ namespace csharp_lista_indirizzi
         private string province;
         private string zip;
 
+
         //Properties
 
         public string Name
@@ -29,7 +30,7 @@ namespace csharp_lista_indirizzi
                 }
                 else
                 {
-                    throw new ArgumentException("Valore del Nome non valido");
+                    throw new ArgumentException("Valore del Nome non valido \n");
                 }
             }
         }
@@ -44,7 +45,7 @@ namespace csharp_lista_indirizzi
                 }
                 else
                 {
-                    throw new ArgumentException("Valore del Cognome non valido");
+                    throw new ArgumentException("Valore del Cognome non valido \n");
                 }
             }
         }
@@ -60,7 +61,7 @@ namespace csharp_lista_indirizzi
                 }
                 else
                 {
-                    throw new ArgumentException("Valore della strada non valido");
+                    throw new ArgumentException("Valore della strada non valido \n");
                 }
             }
         }
@@ -75,7 +76,7 @@ namespace csharp_lista_indirizzi
                 }
                 else
                 {
-                    throw new ArgumentException("Valore della città non valido");
+                    throw new ArgumentException("Valore della città non valido \n");
                 }
             } }
 
@@ -90,7 +91,7 @@ namespace csharp_lista_indirizzi
                 }
                 else
                 {
-                    throw new ArgumentException("Valore della provincia non valido");
+                    throw new ArgumentException("Valore della provincia non valido \n");
                 }
             }
         }
@@ -106,7 +107,7 @@ namespace csharp_lista_indirizzi
                 }
                 else
                 {
-                    throw new ArgumentException("Valore del Codice postale non valido");
+                    throw new ArgumentException("Valore del Codice postale non valido \n");
                 }
             }
         }
