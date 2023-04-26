@@ -20,37 +20,107 @@ namespace csharp_lista_indirizzi
         //Properties
 
         public string Name
-        { get { return name; } }
+        { get { return name; }
+            set 
+            { 
+                if (value != "")
+                {
+                    name = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Valore del Nome non valido");
+                }
+            }
+        }
 
         public string Surname
-        { get { return surname; } }
+        { get { return surname; }
+            set
+            {
+                if (value != "")
+                {
+                    surname = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Valore del Cognome non valido");
+                }
+            }
+        }
 
         public string Street
         {
             get { return street; }
+            set
+            {
+                if (value != "")
+                {
+                    street = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Valore della strada non valido");
+                }
+            }
         }
 
         public string City
-        { get { return city; } }
+        { get { return city; }
+            set
+            {
+                if (value != "")
+                {
+                    city = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Valore della città non valido");
+                }
+            } }
 
         public string Province
-        { get { return province; } }
+        {
+            get { return province; }
+            set
+            {
+                if (value != "")
+                {
+                    province = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Valore della provincia non valido");
+                }
+            }
+        }
 
         public string Zip
         {
             get { return zip; }
+            set
+            {
+                if (value != "")
+                {
+                    zip = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Valore del Codice postale non valido");
+                }
+            }
         }
 
 
         //Name,Surname,Street,City,Province,ZIP
         public Indirizzo(string name, string surname, string street, string city, string province, string zip)
         { 
-            this.name = name;
-            this.surname = surname;
-            this.street = street;
-            this.city = city;
-            this.province = province;
-            this.zip = zip;
+            this.Name = name;
+            this.Surname = surname;
+            this.Street = street;
+            this.City = city;
+            this.Province = province;
+            this.Zip = zip;
         
         }
 

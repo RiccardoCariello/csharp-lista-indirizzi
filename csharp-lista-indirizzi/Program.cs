@@ -14,14 +14,38 @@ using csharp_lista_indirizzi;
 
 StreamReader file = File.OpenText("C:\\Users\\tuono\\source\\repos\\csharp-lista-indirizzi\\csharp-lista-indirizzi\\addresses.csv");
 
-int contatore= ;
+int contatore= 0;
 
 List <Indirizzo> indirizzi = new List <Indirizzo>();
 
+
+//Name,Surname,Street,City,Province,ZIP
 while (!file.EndOfStream)
 {
 
     contatore ++;
+    string rigaTesto = file.ReadLine(); //ora la variabile rigaTesto contiene una riga del file.
+    
+    //ora eseguiremo questo blocco solo se ci troviamo dalla riga 2 in poi
+    if (contatore > 1)
+    {
+        //immagazzino in questo array una stringa inclusa nelle virgole del file per ogni spazio dell'array.
+        string[] informazioniSeparate = rigaTesto.Split(',');
+        
+        // ora contiene tutte le info in una riga e le passo al costruttore, ma prima verifico che siano 6 elementi, come previsto.
+        if (informazioniSeparate.Length == 6) //cosi mi arricuro che siano 6 elementi
+        {
+            //ora controllo che non ci siano campi vuoti
+            for (int i = 0; i < informazioniSeparate.Length; i++)
+            {
+                if (informazioniSeparate[i] == "")
+                {
+                    throw new ArgumentException("");
+                }
+            }
+        }
 
+    }
+    
 
 }
