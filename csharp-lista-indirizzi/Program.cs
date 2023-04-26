@@ -16,7 +16,7 @@ StreamReader file = File.OpenText("C:\\Users\\tuono\\source\\repos\\csharp-lista
 
 int contatore= 0;
 
-List <Indirizzo> indirizzi = new List <Indirizzo>();
+List <Indirizzo> listaIndirizzi = new List <Indirizzo>();
 
 
 //Name,Surname,Street,City,Province,ZIP
@@ -35,17 +35,30 @@ while (!file.EndOfStream)
         // ora contiene tutte le info in una riga e le passo al costruttore, ma prima verifico che siano 6 elementi, come previsto.
         if (informazioniSeparate.Length == 6) //cosi mi arricuro che siano 6 elementi
         {
-            //ora controllo che non ci siano campi vuoti
-            for (int i = 0; i < informazioniSeparate.Length; i++)
+            try
             {
-                if (informazioniSeparate[i] == "")
-                {
-                    throw new ArgumentException("");
-                }
+                Indirizzo indirizzo = new Indirizzo(informazioniSeparate[0], informazioniSeparate[1], informazioniSeparate[2], informazioniSeparate[3], informazioniSeparate[4], informazioniSeparate[5]);
+                listaIndirizzi.Add(indirizzo);
             }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine($"Errore alla riga : {contatore}");
+                
+            }
+        }
+        else
+        {
+            Console.WriteLine($"Il numero di elementi nell'indirizzo N° {contatore} non è idoneo");
         }
 
     }
     
+    
+}
+file.Close();
 
+foreach (Indirizzo indirizzo in listaIndirizzi)
+{
+    Console.WriteLine(indirizzo.ToString());
 }
